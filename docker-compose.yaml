@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  ewallet:
+    build: ./app/
+    command: sh -c './wait-for-postgres.sh db && ./app'
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - CONFIG_PATH=./configs/config.yaml
+      - DB_PASSWORD=qwerty
+
+  db:
+    image: postgres:latest
+    volumes:
+      - ./databaseData:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - 5433:5432
