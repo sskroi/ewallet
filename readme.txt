@@ -8,6 +8,8 @@ Postgres:
     port: 5433
     dbname: postgres
 
+Default mounting point for postgres: ./databaseData
+
 Run: docker-compose up --build
 
 
