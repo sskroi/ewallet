@@ -9,7 +9,7 @@ Endpoints:
 * `/api/v1/wallet/{walletId}/history` GET - история переводов. {walletId} - id кошелька.
 Ответы: 1) статус 404, если кошелек не найден 2) статус 200 + json объект - массив объектов с полями: "from" - id исходящего кошелька, "to" - id входящего кошелька, "amount" - сумма перевода, "time" - время перевода в формате RFC 3339
 
-Конфиг файл лежит в app/configs/config.yaml, директория с базой данных монитруется в ./databaseData, можно измнить в `docker-compose.yaml`
+Конфиг файл лежит в app/configs/config.yaml, директория с базой данных монитруется в ./databaseData, можно изменить в `docker-compose.yaml`
 
 # Launch
 * `docker-compose up --build`
